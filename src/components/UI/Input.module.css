@@ -1,0 +1,8 @@
+.formGroup{
+    display: block;
+    margin-left:100px;
+}
+.formLabel{
+    text-align: right;
+    float: left;
+}
