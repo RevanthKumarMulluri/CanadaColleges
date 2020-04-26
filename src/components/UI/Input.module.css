@@ -6,3 +6,6 @@
     text-align: right;
     float: left;
 }
+.borderSolid{
+    border: 10px solid red;
+}
