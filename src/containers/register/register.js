@@ -165,20 +165,23 @@ class Register extends Component {
     } 
     render() {
         const formEleArray = [];
+        const touched = [];
         for (let key in this.state.controls) {
             if(key==='errors'){
+                console.log(this.state['errors']);
                 continue;
             }
+           touched.push(this.state.controls[key].validation.touched);
             formEleArray.push(
                 {
                     id: key,
                     config: this.state.controls[key]
                 }
             );
+            console.log(touched);
         }
-        let form = (<Form><h1>Sign Up</h1>
-                       
-                        {formEleArray.map(ele =>
+        let form = (<Form>
+                       {formEleArray.map(ele =>
                             <Input key={ele.id} elementType={ele.config.elementType}
                                 label={ele.config.label}
                                 elementConfig={ele.config.elementConfig}
@@ -186,10 +189,22 @@ class Register extends Component {
                                 error={this.state.errors ? this.state.errors[ele.id] : null} validation={ele.config.validation}/>
                         )
                         }
+                         <div className={'form-group '}>
+                            <button className='btn btn-primary mr-2 text-uppercase' disabled={touched.includes(false) || this.state.errors }  type='submit'>
+                                Sign Up
+                            </button>
+                        </div>  
                     </Form>);
         return (
             <div className={classes.form}>
-                {form}
+                <div className='col-lg-8 offset-lg-2'>
+                    <div className="card card-signin my-5">
+                        <div className="card-body">
+                            <h5 className="card-title text-center">Sign Up</h5>
+                            {form}
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }

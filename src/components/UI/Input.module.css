@@ -1,6 +1,7 @@
 .formGroup{
     display: block;
     margin-left:100px;
+    margin-top: 10px;
 }
 .formLabel{
     text-align: right;
