@@ -3,10 +3,25 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import 'popper.js';
+import 'jquery/dist/jquery.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import RootReducer from './actions/reducer/rootReducer';
+import thunk from 'redux-thunk';
+import axios from 'axios';
+
+axios.defaults.baseURL = 'https://pepper-9be89.firebaseio.com/';
+
+
+const store = createStore(RootReducer,applyMiddleware(thunk));
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store = {store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

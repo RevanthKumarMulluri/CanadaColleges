@@ -88,7 +88,7 @@ class Auth extends Component {
 
     inputChangedHandler = (event,eleName) => {
         event.preventDefault();
-        this.resetErrors(eleName);
+        let errors = {} ;
         const updatedForm = {
             ...this.state.controls
         };
@@ -96,20 +96,18 @@ class Auth extends Component {
         const updateFormEle = {...updatedForm[eleName]};
         updateFormEle.value = value;
         updateFormEle.validation.touched = true;
-        updatedForm.errors = this.validationCheck(eleName,value);
-        if(!updatedForm.errors){
+        errors = this.validationCheck(eleName,value);
+        if(!errors){
             updateFormEle.validation.valid = true;
         }else{
             updateFormEle.validation.valid = false;
         }
         updatedForm[eleName] = updateFormEle;
-        this.setState({controls:updatedForm})
+        this.setState({controls:updatedForm,errors:errors})
     }
 
     resetErrors = (name) => {
-        let eleErrors = {...this.state.errors};
-        eleErrors[name] = undefined;
-        this.setState({errors:eleErrors});
+        this.setState({errors:{[name]:''}});
     }
 
     validationCheck = (name,value) => {
@@ -167,6 +165,7 @@ class Auth extends Component {
     } 
     render() {
         const formEleArray = [];
+        const error = [];
         for (let key in this.state.controls) {
             if(key==='errors'){
                 continue;
@@ -179,12 +178,13 @@ class Auth extends Component {
             );
         }
         let form = (<Form><h1>Sign Up</h1>
+                       
                         {formEleArray.map(ele =>
                             <Input key={ele.id} elementType={ele.config.elementType}
                                 label={ele.config.label}
                                 elementConfig={ele.config.elementConfig}
                                 value={ele.config.value}  changed={(event) => this.inputChangedHandler(event,ele.id)}
-                                error={this.state.errors[ele.id]} validation={ele.config.validation}/>
+                                error={this.state.errors ? this.state.errors[ele.id] : null} validation={ele.config.validation}/>
                         )
                         }
                     </Form>);
