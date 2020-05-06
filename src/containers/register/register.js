@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Form } from 'react-bootstrap';
 import Input from '../../components/UI/Input';
-import classes from './Auth.module.css';
+import classes from './register.module.css';
 
-class Auth extends Component {
+class Register extends Component {
     state = {
         controls: {
             firstName: {
@@ -165,7 +165,6 @@ class Auth extends Component {
     } 
     render() {
         const formEleArray = [];
-        const error = [];
         for (let key in this.state.controls) {
             if(key==='errors'){
                 continue;
@@ -196,4 +195,4 @@ class Auth extends Component {
     }
 }
 
-export default Auth;
+export default Register;

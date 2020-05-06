@@ -1,7 +1,6 @@
 import React from 'react';
 import classes from './Navbar.module.css';
-import Login from '../login/login';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 const navbar = () => {
     return (
         <div>
@@ -31,10 +30,10 @@ const navbar = () => {
                             </div>
                         </li>
                         <li className='nav-item'>
-                            <a className='nav-link disabled' href='#' tabindex='-1' aria-disabled='true'>Disabled</a>
+                            <a className='nav-link disabled' href='#' tabIndex='-1' aria-disabled='true'>Disabled</a>
                         </li>
                     </ul>
-                    <Link className='nav-link' to="/login">Login</Link>
+                    <Link className='nav-link' to='/login'>SIGN IN</Link>
                     <form className='form-inline my-2 my-lg-0'>
                         <input className='form-control mr-sm-2' type='search' placeholder='Search' aria-label='Search' />
                         <button className='btn btn-outline-success my-2 my-sm-0' type='submit'>Search</button>

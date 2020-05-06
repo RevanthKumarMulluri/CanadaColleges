@@ -11,3 +11,7 @@
 .borderSolid{
     border: 10px solid red;
 }
+
+.cursor-pointer{
+    cursor: pointer;
+  }

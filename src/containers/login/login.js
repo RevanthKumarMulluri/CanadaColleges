@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import classes from './login.module.css';
 import { useDispatch } from 'react-redux';
-import {userActions} from '../../actions/creators/user.actions';
-
+import { userActions } from '../../actions/creators/user.actions';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Login = () => {
 
@@ -16,44 +17,57 @@ const Login = () => {
 
 
     const handleChange = e => {
-        const {name,value} = e.target;
-        setInputs(inputs => ({...inputs,[name] : value}));
+        const { name, value } = e.target;
+        setInputs(inputs => ({ ...inputs, [name]: value }));
     }
 
     const submitHandler = e => {
         e.preventDefault();
         setSubmitted(true);
-        if(username && password){
-            dispatch(userActions.login(username,password));
+        if (username && password) {
+            dispatch(userActions.login(username, password));
         }
     };
 
 
     return (
         <div className='col-lg-8 offset-lg-2'>
-            <h2>Login</h2>
-            <form name='form' onSubmit={submitHandler}>
-                <div className={'form-group ' + classes.formGroup}>
-                    <label className={classes.formLabel}>Username</label>
-                    <input type='text' name='username' value={username}  onChange={handleChange} className={'form-control' + (submitted && !username ? ' is-invalid' : '')} />
-                    {submitted && !username &&
-                        <div className="invalid-feedback">Username is required</div>
-                    }
-                </div>
-                <div className={'form-group ' + classes.formGroup}>
-                    <label className={classes.formLabel}>Password</label>
-                    <input type='password' name='password' value={password} onChange={handleChange} className={'form-control' + (submitted && !password ? ' is-invalid' : '')} />
-                    {submitted && !password &&
-                        <div className='invalid-feedback'>Password is required</div>
-                    }
-                </div>
-                <div className={'form-group ' + classes.formGroup}>
-                    <button className='btn btn-primary'>
-                       {/* {loggingIn && <span className="spinner-border spinner-border-sm mr-1"></span>} */}
-                        Login
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Sign In</h5>
+                    <form name='form' onSubmit={submitHandler}>
+                        <div className={'form-lebel-group ' + classes.formGroup}>
+                            <label className={classes.formLabel}>Email address</label>
+                            <input type='email' name='username' value={username} onChange={handleChange} className={'form-control' + (submitted && !username ? ' is-invalid' : '')} />
+                            {submitted && !username &&
+                                <div className="invalid-feedback">Username is required</div>
+                            }
+                        </div>
+                        <div className={'form-group ' + classes.formGroup}>
+                            <label className={classes.formLabel}>Password</label>
+                            <input type='password' name='password' value={password} onChange={handleChange} className={'form-control' + (submitted && !password ? ' is-invalid' : '')} />
+                            {submitted && !password &&
+                                <div className='invalid-feedback'>Password is required</div>
+                            }
+                        </div>
+                        <div className={'form-group ' + classes.formGroup}>
+                            <button className='btn btn-primary mr-2 text-uppercase' type='submit'>
+                                {/* {loggingIn && <span className="spinner-border spinner-border-sm mr-1"></span>} */}
+                        Sign in
                     </button>
+                        </div>
+                    </form>
+                    <div className={'float-middle '+classes.formGroup}>
+                        <Link to={'/register'} className={'btn btn-outline-dark'}>
+                            Click here to Register
+                        </Link>
+                        <span> OR </span>
+                        <button class="btn btn-social btn-google btn-outline-dark text-uppercase" type="submit"> <FontAwesomeIcon  icon={['fab', 'google']} /> Sign in with Google</button>
+                       
+                    </div>
+              
                 </div>
-            </form> 
+            </div>
         </div>
 
     );

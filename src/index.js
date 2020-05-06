@@ -7,11 +7,17 @@ import 'popper.js';
 import 'jquery/dist/jquery.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
+import 'jquery/src/jquery'; 
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import RootReducer from './actions/reducer/rootReducer';
 import thunk from 'redux-thunk';
 import axios from 'axios';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
+
+library.add(fab);
+
 
 axios.defaults.baseURL = 'https://pepper-9be89.firebaseio.com/';
 

@@ -1,10 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Auth from './containers/Auth/Auth';
+import Register from './containers/register/register';
 import Nav from './containers/navbar/Navbar';
 import { BrowserRouter } from 'react-router-dom';
-import {Switch,Route} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import Login from './containers/login/login';
 
 function App() {
@@ -12,9 +11,8 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Nav />
-        <Switch>
-          <Route path="/login" component = {Login}/>
-        </Switch>
+        <Route path="/login" component = {Login}/>
+        <Route path="/register" component = {Register}/>
       </div>
     </BrowserRouter>
   );
