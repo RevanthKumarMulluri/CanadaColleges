@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import classes from './login.module.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import { userActions } from '../../actions/creators/user.actions';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 const Login = () => {
 
@@ -15,8 +16,11 @@ const Login = () => {
     const [disable, setDisable] = useState(true);
     const { username, password } = inputs;
     const dispatch = useDispatch();
-
-
+    const { user, loggedIn } = useSelector(state => ({
+        user: state.auth.user,
+        loggedIn: state.auth.loggedIn
+    }));
+    console.log(user);
     const handleChange = e => {
         const { name, value } = e.target;
         setInputs(inputs => ({ ...inputs, [name]: value }));
@@ -33,6 +37,11 @@ const Login = () => {
         if (username && password) {
             dispatch(userActions.login(username, password));
         }
+    };
+
+    const googleLoginHandler = event => {
+        event.preventDefault();
+        dispatch(userActions.loginWithGoogle());
     };
 
 
@@ -68,7 +77,7 @@ const Login = () => {
                             Click here to Register
                         </Link>
                         <span> OR </span>
-                        <button className="btn btn-social btn-google btn-outline-dark text-uppercase" type="submit"> <FontAwesomeIcon  icon={['fab', 'google']} /> Sign in with Google</button>
+                        <button className="btn btn-social btn-google btn-outline-dark text-uppercase" onClick={googleLoginHandler} type="submit"> <FontAwesomeIcon  icon={['fab', 'google']} /> Sign in with Google</button>
                        
                     </div>
               

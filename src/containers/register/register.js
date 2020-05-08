@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 import { Form } from 'react-bootstrap';
 import Input from '../../components/UI/Input';
 import classes from './register.module.css';
-
+import {connect} from 'react-redux';
+import axios from 'axios';
+import { userActions } from '../../actions/creators/user.actions';
+import { userService } from '../../services/user.service';
 class Register extends Component {
+   
     state = {
         controls: {
             firstName: {
@@ -84,6 +88,25 @@ class Register extends Component {
         errors: {
 
         }
+    }
+
+    inputSubmitHandler = () => {
+        const user = {
+            firstName : this.state.controls['firstName'].value,
+            lastName : this.state.controls['lastName'].value,
+            email : this.state.controls['email'].value,
+            password : this.state.controls['password'].value
+        }
+        const uid = null;
+        userService.register(user).then(res => {
+            this.props.onRegister(user,14);
+       }).then(add => {
+            console.log(add);
+        });
+        userService.addUser(user,15).then(res => {
+            console.log(res);
+        })
+       
     }
 
     inputChangedHandler = (event,eleName) => {
@@ -168,7 +191,6 @@ class Register extends Component {
         const touched = [];
         for (let key in this.state.controls) {
             if(key==='errors'){
-                console.log(this.state['errors']);
                 continue;
             }
            touched.push(this.state.controls[key].validation.touched);
@@ -178,9 +200,8 @@ class Register extends Component {
                     config: this.state.controls[key]
                 }
             );
-            console.log(touched);
         }
-        let form = (<Form>
+        let form = (<Form onSubmit={this.inputSubmitHandler}>
                        {formEleArray.map(ele =>
                             <Input key={ele.id} elementType={ele.config.elementType}
                                 label={ele.config.label}
@@ -210,4 +231,16 @@ class Register extends Component {
     }
 }
 
-export default Register;
+const mapDispatchToProps = dispatch => {
+    return {
+        onRegister: (user,uid) => dispatch(userActions.addUser(user,uid))
+    }
+};
+
+const mapStateToProps = state => {
+    return {
+        userId : state.register.userId
+    }
+};
+
+export default connect(null,mapDispatchToProps)(Register);

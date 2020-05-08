@@ -1,7 +1,9 @@
 import React from 'react';
 import classes from './Navbar.module.css';
 import { Link } from 'react-router-dom';
-const navbar = () => {
+import { useSelector } from 'react-redux';
+const Navbar = () => {
+    const user = useSelector (state => state.auth.user);
     return (
         <div>
             <nav className={'navbar navbar-expand-lg ' + classes.navColor}>
@@ -44,4 +46,4 @@ const navbar = () => {
     );
 }
 
-export default navbar;
+export default Navbar;

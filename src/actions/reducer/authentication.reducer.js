@@ -5,6 +5,7 @@ let user = JSON.parse(localStorage.getItem('user'));
 const initialState = user ? { logedIn: true, user } : {};
 
 const authenticationReducer = (state = initialState, action) => {
+    console.log(action);
     switch (action.type) {
         case userConstants.LOGIN_REQUEST:
             return {
@@ -17,7 +18,9 @@ const authenticationReducer = (state = initialState, action) => {
                 user: action.user
             };
         case userConstants.LOGIN_FAILURE:
-            return {};
+            return {
+                error : action.error
+            };
         case userConstants.LOGOUT:
             return {};
         default:
