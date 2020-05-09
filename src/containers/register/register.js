@@ -3,9 +3,8 @@ import { Form } from 'react-bootstrap';
 import Input from '../../components/UI/Input';
 import classes from './register.module.css';
 import {connect} from 'react-redux';
-import axios from 'axios';
 import { userActions } from '../../actions/creators/user.actions';
-import { userService } from '../../services/user.service';
+
 class Register extends Component {
    
     state = {
@@ -91,22 +90,12 @@ class Register extends Component {
     }
 
     inputSubmitHandler = () => {
-        const user = {
-            firstName : this.state.controls['firstName'].value,
-            lastName : this.state.controls['lastName'].value,
-            email : this.state.controls['email'].value,
-            password : this.state.controls['password'].value
-        }
-        const uid = null;
-        userService.register(user).then(res => {
-            this.props.onRegister(user,14);
-       }).then(add => {
-            console.log(add);
-        });
-        userService.addUser(user,15).then(res => {
-            console.log(res);
-        })
-       
+        // const user = {
+        //     firstName : this.state.controls['firstName'].value,
+        //     lastName : this.state.controls['lastName'].value,
+        //     email : this.state.controls['email'].value,
+        //     password : this.state.controls['password'].value
+        // }
     }
 
     inputChangedHandler = (event,eleName) => {
@@ -237,10 +226,5 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-const mapStateToProps = state => {
-    return {
-        userId : state.register.userId
-    }
-};
 
 export default connect(null,mapDispatchToProps)(Register);
