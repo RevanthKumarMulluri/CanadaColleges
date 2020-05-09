@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import classes from './login.module.css';
 import { useDispatch,useSelector } from 'react-redux';
 import { userActions } from '../../actions/creators/user.actions';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
@@ -16,11 +16,8 @@ const Login = () => {
     const [disable, setDisable] = useState(true);
     const { username, password } = inputs;
     const dispatch = useDispatch();
-    const { user, loggedIn } = useSelector(state => ({
-        user: state.auth.user,
-        loggedIn: state.auth.loggedIn
-    }));
-    console.log(user);
+    const history = useHistory();
+    
     const handleChange = e => {
         const { name, value } = e.target;
         setInputs(inputs => ({ ...inputs, [name]: value }));
@@ -42,6 +39,7 @@ const Login = () => {
     const googleLoginHandler = event => {
         event.preventDefault();
         dispatch(userActions.loginWithGoogle());
+        history.push('/');
     };
 
 
