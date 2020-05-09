@@ -15,14 +15,14 @@ import thunk from 'redux-thunk';
 import axios from 'axios';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 library.add(fab);
 
 
-axios.defaults.baseURL = 'https://pepper-9be89.firebaseio.com/';
+axios.defaults.baseURL = 'https://canadacolleges-c1eaa.firebaseio.com/';
 
-
-const store = createStore(RootReducer,applyMiddleware(thunk));
+const store = createStore(RootReducer,composeWithDevTools(applyMiddleware(thunk)));
 ReactDOM.render(
   <React.StrictMode>
     <Provider store = {store}>
