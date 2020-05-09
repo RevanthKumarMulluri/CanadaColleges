@@ -56,6 +56,12 @@ const addUser = (user,uid) => {
     }
 }
 
+const logOut = (user) => {
+    return {
+        type : userConstants.LOGOUT,user
+    };
+}
+
 
 
 
@@ -86,5 +92,5 @@ const failure = error => {
 
 
 export const userActions = {
-    login,register,addUser,loginWithGoogle
+    login,register,addUser,loginWithGoogle,logOut
 };
