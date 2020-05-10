@@ -1,0 +1,19 @@
+@import '../../../scss/colors';
+
+button {
+    background-color:$primaryColor;
+    color: white;
+    font-weight: bold;
+}
+
+.Outline {
+    background-color:white;
+    color: black;
+    border-color: $primaryColor;
+
+}
+
+.Outline:hover {
+    background-color:$primaryColor;
+    color:white;
+}

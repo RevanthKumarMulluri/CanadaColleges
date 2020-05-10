@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Form } from 'react-bootstrap';
 import Input from '../../components/UI/Input';
-import classes from './register.module.css';
+import classes from './register.module.scss';
 import {connect} from 'react-redux';
 import { userActions } from '../../actions/creators/user.actions';
+import Button from '../../components/UI/button/Button';
 
 class Register extends Component {
    
@@ -200,9 +201,9 @@ class Register extends Component {
                         )
                         }
                          <div className={'form-group '}>
-                            <button className='btn btn-primary mr-2 text-uppercase' disabled={touched.includes(false) || this.state.errors }  type='submit'>
+                            <Button  disabled={touched.includes(false) || this.state.errors }  type='submit'>
                                 Sign Up
-                            </button>
+                            </Button>
                         </div>  
                     </Form>);
         return (

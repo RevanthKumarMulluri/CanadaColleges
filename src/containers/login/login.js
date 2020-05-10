@@ -4,6 +4,7 @@ import { useDispatch,useSelector } from 'react-redux';
 import { userActions } from '../../actions/creators/user.actions';
 import { Link, useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Button from '../../components/UI/button/Button';
 
 
 const Login = () => {
@@ -64,18 +65,18 @@ const Login = () => {
                             }
                         </div>
                         <div className={'form-group ' + classes.formGroup}>
-                            <button className='btn btn-primary mr-2 text-uppercase' disabled={disable} type='submit'>
+                            <Button disabled={disable} type='submit'>
                                 {/* {loggingIn && <span className="spinner-border spinner-border-sm mr-1"></span>} */}
-                        Sign in
-                    </button>
+                                Sign in
+                            </Button>
                         </div>
                     </form>
                     <div className={'float-middle '+classes.formGroup}>
-                        <Link to={'/register'} className={'btn btn-outline-dark'}>
-                            Click here to Register
+                        <Link to={'/register'}>
+                           <Button elementType='btn-outline'>Click here to Register</Button> 
                         </Link>
                         <span> OR </span>
-                        <button className="btn btn-social btn-google btn-outline-dark text-uppercase" onClick={googleLoginHandler} type="submit"> <FontAwesomeIcon  icon={['fab', 'google']} /> Sign in with Google</button>
+                        <Button elementType='btn-outline'  onClick={googleLoginHandler} type="submit"> <FontAwesomeIcon  icon={['fab', 'google']} /> Sign in with Google</Button>
                        
                     </div>
               

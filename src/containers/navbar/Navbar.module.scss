@@ -1,0 +1,23 @@
+@import '../../scss/colors';
+.navColor{
+    background-color:$primaryColor;
+    position:relative;
+    color: white;
+   font-weight: bold;
+   font-size: 1.2em;
+}
+nav a {
+    color:white;
+}
+
+nav a:hover{
+    color :rgba(255, 255, 255, 0.993);
+}
+
+nav img {
+        width: 50px;
+        height: 50px;
+}
+.nav-link {
+    cursor: pointer
+  }
