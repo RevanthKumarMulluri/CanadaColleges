@@ -43,16 +43,16 @@ const AddForum = () => {
         setMatch([]);
     }
 
-    let matchHtml = (<ul>
+    let matchHtml = (<ul className='list-group'>
         {match.map((ele,id) =>
-             <li onClick={() => suggestionSelected(ele)} key={id}>{ele}</li>
+             <li className='list-group-item' onClick={() => suggestionSelected(ele)} key={id}>{ele}</li>
          )}
      </ul>); 
 
     return (
         <div className={classes.parentdiv}>
-            <div>
-                <input type='text' value={name} name='clgname' onChange={changeHandler} placeholder="Select A College or University" />
+            <div className={'form-group '+classes.formGroup}>
+                <input className={'form-control'} type='text' value={name} name='clgname' onChange={changeHandler} placeholder="Select A College or University" />
                 {matchHtml}
             </div>
             <div className={classes.buttondiv}> 

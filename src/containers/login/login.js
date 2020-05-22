@@ -50,7 +50,7 @@ const Login = () => {
                 <div className="card-body">
                     <h5 className="card-title text-center">Sign In</h5>
                     <form name='form' onSubmit={submitHandler}>
-                        <div className={'form-lebel-group ' + classes.formGroup}>
+                        <div className={'form-group ' + classes.formGroup}>
                             <label className={classes.formLabel}>Email address</label>
                             <input type='email' name='username' value={username} onChange={handleChange} className={'form-control' + (submitted && !username ? ' is-invalid' : '')} />
                             {submitted && !username &&

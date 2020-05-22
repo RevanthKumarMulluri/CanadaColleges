@@ -1,18 +1,23 @@
+@import '../../scss/colors';
+
+
 input{
-    width: 70%;
+    width: 60%;
     text-align: center;
+    font-weight: bold;
 }
 
-.inputtext{
-    position: fixed;
-   left: 18%;
-   top: 40%;
+input::placeholder{
+    font-weight: lighter;
 }
-.card{
-    position: fixed;
-   left: 30%;
-   top: 50%;
-}
+
+.formGroup{
+    display: block;
+    margin-right: 100px;
+    margin-left:100px;
+    margin-top: 10px;
+  }
+
 
 .parentdiv{
     transform: translate(100px,300px);
@@ -23,3 +28,8 @@ input{
 .buttondiv{
     margin-top: 50px;
 }
+
+li:hover {
+    background-image: $backGround;
+}
+
