@@ -24,7 +24,7 @@ const AddForum = () => {
     const changeHandler = e => {
         const value = e.target.value.trim();
         setName(value);
-        if (name) {
+        if (value) {
            const uniNames = Object.keys(data);
            const regex = new RegExp('.*'+value,'i');
            let match = uniNames.filter(uni => {
@@ -33,6 +33,8 @@ const AddForum = () => {
                } 
             })
            setMatch(match);
+        }else {
+            setMatch([]);
         }
     }
 
