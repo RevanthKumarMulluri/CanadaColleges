@@ -1,0 +1,25 @@
+input{
+    width: 70%;
+    text-align: center;
+}
+
+.inputtext{
+    position: fixed;
+   left: 18%;
+   top: 40%;
+}
+.card{
+    position: fixed;
+   left: 30%;
+   top: 50%;
+}
+
+.parentdiv{
+    transform: translate(100px,300px);
+    justify-content: center;
+    align-items: center;
+}
+
+.buttondiv{
+    margin-top: 50px;
+}

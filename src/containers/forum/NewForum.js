@@ -8,7 +8,7 @@ const createForum = () =>{
         width: '500px'
     }
     return (
-        <Link to={'/login'} className = {classes.forum}>
+        <Link to={'/startforum'} className = {classes.forum}>
             <Button style={styles} elementType='btn-outline'>Start A Forum</Button> 
         </Link>
     )

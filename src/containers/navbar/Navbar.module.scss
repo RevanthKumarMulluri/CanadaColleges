@@ -1,6 +1,7 @@
 @import '../../scss/colors';
 .navColor{
     background-color:$primaryColor;
+    background-image: $backGround;
     position:relative;
     color: white;
    font-weight: bold;

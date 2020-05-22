@@ -9,6 +9,7 @@ import Login from './containers/login/login';
 import {PrivateRoute} from './containers/routerestriction/privateRoute';
 import {UnAuthRoute} from './containers/routerestriction/unauthroute';
 import Button from './components/UI/button/Button';
+import AddForum from './containers/forum/AddForum';
 import { Link } from 'react-router-dom';
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
         <Switch>
           <UnAuthRoute path="/login" component = {Login}/>
           <UnAuthRoute path="/register" component = {Register}/>
-          <UnAuthRoute path="/" component = {CreateForum }/>
+          <PrivateRoute path="/startforum" component = {AddForum}/>
+          <Route path="/" component = {CreateForum }/>
         </Switch>
         
       </div>

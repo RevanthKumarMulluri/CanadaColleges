@@ -2,6 +2,7 @@
 @import '../../../scss/animations';
 
 button {
+    background-image: $backGround;
     background-color:$primaryColor;
     color: white;
     font-weight: bold;
@@ -12,14 +13,15 @@ button:hover{
 }
 
 .Outline {
-    background-color:white;
+    background-image:$whiteBackGround;
+    background-color:$whiteBackGround;
     color: black;
     border-color: $primaryColor;
 
 }
 
 .Outline:hover {
-    background-color:$primaryColor;
+    background-image: $backGround;
     color:white;
 }
 
