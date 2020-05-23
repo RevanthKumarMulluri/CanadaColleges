@@ -6,7 +6,12 @@ import  Button  from '../../components/UI/button/Button';
 
 const GetForum = () => {
     const { uniname } = useParams();
-    console.log(useParams());
+    const { user, loggedIn } = useSelector(state => ({
+        user: state.auth.user,
+        loggedIn: state.auth.loggedIn
+    }));
+    const history = useHistory();
+    console.log(history)
     return (
         <React.Fragment>
             <header>
@@ -15,7 +20,12 @@ const GetForum = () => {
             <div className={classes.comment}>
                 <Comment></Comment>
             </div>
-            <Button elementType='btn'>Comment</Button> 
+             {loggedIn ? 
+            <Link>
+                <Button elementType='btn'>Comment</Button> 
+            </Link>:
+            <div>Please Login To Comment</div>
+            }
         </React.Fragment>
 
     );
