@@ -3,6 +3,8 @@ import Button from '../../components/UI/button/Button';
 import {forumActions} from '../../actions/creators/forum.actions';
 import classes from './AddForum.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 
 const AddForum = () => {
     const styles = {
@@ -16,7 +18,6 @@ const AddForum = () => {
     }));
 
     const [match, setMatch] = useState([]);
-
     useEffect(() => {
         dispatch(forumActions.getUniversities());
     },[]);
@@ -56,7 +57,9 @@ const AddForum = () => {
                 {matchHtml}
             </div>
             <div className={classes.buttondiv}> 
-                <Button style={styles}>START</Button>
+                <Link to={'/forums/'+name}>
+                    <Button style={styles}>START</Button>
+                </Link>
             </div>
         </div>
     );

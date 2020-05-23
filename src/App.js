@@ -11,6 +11,7 @@ import {UnAuthRoute} from './containers/routerestriction/unauthroute';
 import Button from './components/UI/button/Button';
 import AddForum from './containers/forum/AddForum';
 import { Link } from 'react-router-dom';
+import GetForum from './containers/forum/getForum';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <UnAuthRoute path="/login" component = {Login}/>
           <UnAuthRoute path="/register" component = {Register}/>
           <PrivateRoute path="/startforum" component = {AddForum}/>
+          <Route path="/forums/:uniname" component={GetForum} />
           <Route path="/" component = {CreateForum }/>
         </Switch>
         
