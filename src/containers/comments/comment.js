@@ -8,20 +8,19 @@ const Comment = () => {
     let time = 'time';
     return (
 
-        <div className={'media mb-3 '+classes.comment}>
-            <img
-                className={'mr-3 bg-light rounded '+classes.image}
-                width='60'
-                height='60'
-                src={`https://api.adorable.io/avatars/48/${name.toLowerCase()}@adorable.io.png`}
-                alt={name}
-            />
+        <div className={'container'}>
+            <div className={'row bg-light border '+classes.comment}>
+                <div className={'col col-md-1 '+classes.image}>
+                    {name.charAt(0).toUpperCase()}
+                </div>
 
-            <div className='media-body p-2 shadow-sm rounded bg-light border'>
-                <small className='float-right text-muted'>{time}</small>
-                <h6 className='mt-0 mb-1 text-muted'>{name}</h6>
-                {message}
+                <div className='col col-md'>
+                    <small className='float-right text-muted'>{time}</small>
+                    <h6 className='mt-0 mb-1 text-muted'>{name}</h6>
+                    {message}
+                </div>
             </div>
+
         </div>
     )
 }

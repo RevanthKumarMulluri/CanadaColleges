@@ -1,7 +1,17 @@
+@import '../../scss/colors';
+
+
 .comment{
-    margin :50px;
-}
+    border-radius: 10px;
+} 
 
 .image{
-    transform: translateX(18px);
+    margin-right: 5px;
+    width:60px;
+    height:60px;
+    color: white;
+    justify-content: center;
+    font-size: 30px;
+    background: $backGround;
+    border-radius: 100px;
 }
