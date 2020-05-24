@@ -8,7 +8,7 @@ const Comment = () => {
     let time = 'time';
     return (
 
-        <div className={'container'}>
+        <div className={'container '+classes.parentdiv}>
             <div className={'row bg-light border '+classes.comment}>
                 <div className={'col col-md-1 '+classes.image}>
                     {name.charAt(0).toUpperCase()}
