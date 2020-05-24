@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router';
+import { useSelector } from 'react-redux';
+import { useParams,useHistory } from 'react-router';
 import classes from './getForum.module.scss';
 import Comment from '../comments/comment';
-import  Button  from '../../components/UI/button/Button';
+import NewComment from '../comments/NewComment';
 
 const GetForum = () => {
     const { uniname } = useParams();
@@ -11,7 +12,6 @@ const GetForum = () => {
         loggedIn: state.auth.loggedIn
     }));
     const history = useHistory();
-    console.log(history)
     return (
         <React.Fragment>
             <header>
@@ -21,9 +21,7 @@ const GetForum = () => {
                 <Comment></Comment>
             </div>
              {loggedIn ? 
-            <Link>
-                <Button elementType='btn'>Comment</Button> 
-            </Link>:
+            <NewComment uniname={uniname}/>:
             <div>Please Login To Comment</div>
             }
         </React.Fragment>
