@@ -8,8 +8,9 @@ const forumReducer = (state = initialState, action) => {
     switch (action.type) {
         case forumConstants.UNIVERSITIES:
             return {
-                data: action.data
-            };
+                ...state,
+                universities: action.data
+            };   
         default:
             return state
     }

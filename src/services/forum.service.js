@@ -10,6 +10,22 @@ const getUniversities = () => {
     })
 }
 
+const addComment = (uniname,comment) => {
+    return axios.post('/'+uniname+'/comments.json',comment).then( res => {
+        return res.data;
+    }).catch(error => {
+        return error;
+    })
+}
+
+const getComments = (uniname) => {
+    return axios.get('/'+uniname+'/comments.json').then(res => {
+        return res.data;
+    }).catch(error => {
+        return error;
+    })
+}
+
 export const forumService = {
-    getUniversities
+    getUniversities,addComment,getComments
 };
