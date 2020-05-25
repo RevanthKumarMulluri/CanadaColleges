@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import classes from './comment.module.scss';
 
 
-const Comment = () => {
-    let name = 'hello';
-    let message = 'how are you';
+const Comment = (props) => {
+    let name = props.name;
+    let message = props.commentText;
     let time = 'time';
     return (
 
