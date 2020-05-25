@@ -13,8 +13,8 @@ const AddForum = () => {
 
     const [name, setName] = useState('');
     const dispatch = useDispatch();
-    const { data } = useSelector(state => ({
-        data: state.forum.data,
+    const { universities } = useSelector(state => ({
+        universities: state.forum.universities,
     }));
 
     const [match, setMatch] = useState([]);
@@ -26,7 +26,7 @@ const AddForum = () => {
         const value = e.target.value.trim();
         setName(value);
         if (value) {
-           const uniNames = Object.keys(data);
+           const uniNames = Object.keys(universities);
            const regex = new RegExp('.*'+value,'i');
            let match = uniNames.filter(uni => {
                if(regex.test(uni)){

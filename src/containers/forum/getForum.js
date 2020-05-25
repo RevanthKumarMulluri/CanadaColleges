@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React,{useEffect,useState} from 'react';
 import { useSelector } from 'react-redux';
-import { useParams,useHistory } from 'react-router';
+import { useParams } from 'react-router';
 import classes from './getForum.module.scss';
-import Comment from '../comments/comment';
+import CommentList from '../comments/CommentList';
 import NewComment from '../comments/NewComment';
+import useFetch from '../../components/customhooks/useFetch';
 
 const GetForum = () => {
     const { uniname } = useParams();
@@ -11,14 +12,18 @@ const GetForum = () => {
         user: state.auth.user,
         loggedIn: state.auth.loggedIn
     }));
-    const history = useHistory();
+   
+   const comments = useFetch(uniname);
+    
+    console.log(comments);
     return (
         <React.Fragment>
+           
             <header>
                 <h2 className={'h2 ' + classes.heading}>{uniname}</h2>
             </header>
             <div className={classes.comment}>
-                <Comment></Comment>
+                {/* <CommentList comments = {comments}></CommentList> */}
             </div>
              {loggedIn ? 
             <NewComment uniname={uniname}/>:
