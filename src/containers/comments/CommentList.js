@@ -1,15 +1,23 @@
 import React from 'react';
 import classes from './commentlist.module.scss';
 import Comment from './comment';
+import useFetch from '../../components/customhooks/useFetch';
 
 const CommentList = (props) => {
-    console.log(props.comments);
-let commentsHtml =  (<React.Fragment>{props.comments.map((comment) => 
-        <Comment name={comment.displayName} commentText={comment.CommentText}/>
-)}</React.Fragment>);
-
+  const comments = useFetch(props.uniname);
+  let commentsHtml = null;
+    if(comments){
+        let keys = Object.keys(comments);
+        commentsHtml = (<React.Fragment>
+        {keys.map((key) =>
+             <Comment key={key} name={comments[key].displayName} commentText={comments[key].commentText}></Comment>
+         )}
+     </React.Fragment>); 
+        
+    }
+ 
     return (
-       {commentsHtml}
+    <div>{commentsHtml}</div>
     )
 }
 
