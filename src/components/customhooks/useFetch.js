@@ -4,12 +4,19 @@ import { forumService } from '../../services/forum.service';
  const useFetch = (uri) => {
   const [data, setData] = useState({});
   useEffect( () => {
-    const fetchData = async ()=> {
-      const res = await forumService.getComments(uri);
-      setData(res);
+    const fetchData = ()=> {
+      forumService.getComments(uri).subscribe(
+        res => {
+           setData(res.data);
+        },
+        error => {
+          console.log(error);
+        }
+      );;
+     
     };
     fetchData();
-}, []);
+}, data);
   return data;
 }
 
