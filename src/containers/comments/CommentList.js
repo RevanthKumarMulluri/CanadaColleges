@@ -4,7 +4,7 @@ import Comment from './comment';
 import useFetch from '../../components/customhooks/useFetch';
 
 const CommentList = (props) => {
-  const comments = useFetch(props.uniname);
+  const comments = props.comments;
   let commentsHtml = null;
     if(comments){
         let keys = Object.keys(comments);

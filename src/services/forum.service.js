@@ -20,7 +20,12 @@ const addComment = (uniname,comment) => {
 }
 
 const getComments = (uniname) => {
-    return axiosob.get('/'+uniname+'/comments.json');
+    return axios.get('/'+uniname+'/comments.json').
+    then(res => {
+        return res.data;
+    }).catch(error => {
+        return error;
+    })
 }
 
 export const forumService = {

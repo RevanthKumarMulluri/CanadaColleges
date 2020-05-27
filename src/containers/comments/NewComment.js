@@ -15,6 +15,7 @@ const NewComment = (props) => {
     const history = useHistory();
     const [showModal, setShowModal] = useState(true);
     let modalClose = null;
+
     const addCommentsHandler = () => {
         const comment = {
             commentText: commentText,
@@ -23,9 +24,7 @@ const NewComment = (props) => {
         }
         if (commentText) {
             forumService.addComment(props.uniname, comment).then(res => {
-                  modalClose = {
-                    display: 'none'
-                  };
+                 props.update();
                 history.push('/forums/' + props.uniname);
 
             }).catch(e => {
