@@ -1,5 +1,6 @@
 import {myFirebase} from '../database/firebase';
 import axios from 'axios';
+import axiosob from 'axios-observable';
 
 
 const getUniversities = () => {
@@ -19,11 +20,7 @@ const addComment = (uniname,comment) => {
 }
 
 const getComments = (uniname) => {
-    return axios.get('/'+uniname+'/comments.json').then(res => {
-        return res.data;
-    }).catch(error => {
-        return error;
-    })
+    return axiosob.get('/'+uniname+'/comments.json');
 }
 
 export const forumService = {
