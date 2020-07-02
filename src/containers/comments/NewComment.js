@@ -3,7 +3,7 @@ import Button from '../../components/UI/button/Button';
 import { forumService } from '../../services/forum.service';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-
+import Modal from '../../components/UI/modal/modal';
 
 const NewComment = (props) => {
     const [commentText, setCommentText] = useState('');
@@ -13,7 +13,7 @@ const NewComment = (props) => {
     }));
     const modal = useRef(null);
     const history = useHistory();
-    const [showModal, setShowModal] = useState(true);
+    const [showModal, setShowModal] = useState(false);
     let modalClose = null;
 
     const addCommentsHandler = () => {
@@ -38,14 +38,18 @@ const NewComment = (props) => {
     const changeHandler = event => {
         setCommentText(event.target.value);
     }
+
+    const modalHandler = () => {
+        setShowModal(true);
+    }
     
     return (
         <React.Fragment>
-            <Button elementType='btn' data-toggle='modal' data-target='#exampleModal'>
+            <Button elementType='btn' onClick={modalHandler}>
                 Comment
             </Button>
 
-            <div className={'modal'} style={modalClose} ref={modal} id='exampleModal' role='dialog' aria-labelledby='ModalLabel' aria-hidden='true'>
+            {/* <div className={'modal'} style={modalClose} ref={modal} id='exampleModal' role='dialog' aria-labelledby='ModalLabel' aria-hidden='true'>
                 <div className='modal-dialog'>
                     <div className='modal-content'>
                         <div className='modal-header'>
@@ -64,7 +68,8 @@ const NewComment = (props) => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
+            {showModal && <Modal></Modal>}
         </React.Fragment>
 
     )
