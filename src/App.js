@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import classes from './App.module.scss';
 import Register from './containers/register/register';
 import CreateForum from './containers/forum/NewForum';
 import Nav from './containers/navbar/Navbar';
@@ -16,8 +16,10 @@ import GetForum from './containers/forum/getForum';
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className={classes.App}>
         <Nav />
+        <CreateForum/>
+        {/* <div className={classes.Background}>
         <Switch>
           <UnAuthRoute path="/login" component = {Login}/>
           <UnAuthRoute path="/register" component = {Register}/>
@@ -25,7 +27,7 @@ function App() {
           <Route path="/forums/:uniname" component={GetForum} />
           <Route path="/" component = {CreateForum }/>
         </Switch>
-        
+        </div> */}
       </div>
     </BrowserRouter>
   );

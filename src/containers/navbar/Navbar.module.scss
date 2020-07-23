@@ -1,18 +1,40 @@
 @import '../../scss/colors';
-.navColor{
-    background-color:$primaryColor;
-    background-image: $backGround;
-    position:relative;
-    color: white;
-   font-weight: bold;
-   font-size: 1.2em;
+
+.container {
+    position: relative;
 }
+
+.navColor{
+    color: white;
+    font-size: 1.5rem;
+    padding: 10rem;
+    //background-color: #1FDED2;
+    top:30px;
+    margin: 0px 25px;
+    border-radius: 15px;
+    height: 3.5rem;
+    font-weight: bold;
+}
+
+.bgimage {
+    background-image: linear-gradient(to right, rgba( $color-primary-light,0.3),rgba($color-primary-dark,0.3)),url(../../images/uni.jpg);
+    background-size: cover;
+    background-position: center;
+    height:50vh;
+    width: 100%;
+    position: absolute;
+}
+
+.logo{
+    height : 4.5rem;
+}
+
 nav a {
-    color:white;
+    color:black;
 }
 
 nav a:hover{
-    color :rgba(255, 255, 255, 0.993);
+    color :$color-primary-light;
 }
 
 nav img {
@@ -21,4 +43,8 @@ nav img {
 }
 .nav-link {
     cursor: pointer
+  }
+
+  .signin{
+      float : right;
   }

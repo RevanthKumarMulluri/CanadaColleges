@@ -42,24 +42,18 @@ const Navbar = () => {
 
     }
     return (
-        <div>
+      <div className={classes.container}>
+          <div className={classes.bgimage}>
             <nav className={'navbar navbar-expand-lg ' + classes.navColor}>
-            <div>
-            <img src={logo}  className='d-inline-block align-top mx-2' alt=''/>
+            <div className={classes.logo}>
+                <img src={logo}  className='d-inline-block align-top mx-2' alt=''/>
             </div> 
                 <Link className='navbar-brand' to='/'>
                     CanadaColleges
                 </Link>
-                <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
-                    <span className='navbar-toggler-icon'></span>
-                </button>
+                <Link className='nav-link' to='/'>STUDY</Link>
 
-                <div className='collapse navbar-collapse' id='navbarSupportedContent'>
-                    <ul className='navbar-nav mr-auto'>
-                        <li className='nav-item active'>
-                            <Link className='nav-link' to='/'>STUDY <span className='sr-only'>(current)</span></Link>
-                        </li>
-                    </ul>
+                <div className={'collapse navbar-collapse col-md-4 ml-auto'} id="navbarNav">                   
                     <UserLoginHandler/>
                     <form className='form-inline my-2 my-lg-0'>
                         <input className='form-control mr-sm-2' type='search' placeholder='Search' aria-label='Search' />
@@ -68,6 +62,8 @@ const Navbar = () => {
                 </div>
             </nav>
         </div>
+     </div>  
+        
     );
 }
 
