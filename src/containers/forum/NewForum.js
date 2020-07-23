@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '../../components/UI/button/Button';
 import {Link} from 'react-router-dom';
 import classes from './NewForum.module.scss';
 import forum from '../../images/forum.png';
