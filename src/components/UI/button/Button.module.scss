@@ -1,27 +1,27 @@
 @import '../../../scss/colors';
 @import '../../../scss/animations';
 
-button {
-    background-image: $backGround;
-    background-color:$primaryColor;
-    color: white;
-    font-weight: bold;
-}
+// button {
+//     background-image: $backGround;
+//     background-color:$primaryColor;
+//     color: white;
+//     font-weight: bold;
+// }
 
-button:hover{
-   animation: zoomin 1s forwards;
-}
+// button:hover{
+//    animation: zoomin 1s forwards;
+// }
 
-.Outline {
-    background-image:$whiteBackGround;
-    background-color:$whiteBackGround;
-    color: black;
-    border-color: $primaryColor;
+// .Outline {
+//     background-image:$whiteBackGround;
+//     background-color:$whiteBackGround;
+//     color: black;
+//     border-color: $primaryColor;
 
-}
+// }
 
-.Outline:hover {
-    background-image: $backGround;
-    color:white;
-}
+// .Outline:hover {
+//     background-image: $backGround;
+//     color:white;
+// }
 
