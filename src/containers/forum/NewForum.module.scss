@@ -6,29 +6,27 @@
     position: fixed;
     top: 40vh;
     right:55vh;
+    border-radius: 3px;
 }
 
-.newforum{
- 
-    
+.forum:hover{
+    color :white;
+    transform: translateY(-1.5rem) scale(1.03);
+    transition: transform .5s ease-in;
 }
 
 .imagecomposition {
     border-radius: 10rem;
-    box-shadow: 0 1.5rem 4 rem rgba($color-black,.4);
     transition: all .5s ease-in-out;
     background: transparent;
   
 }
 
 .imagetext{
-    margin-top: 5rem;
-    padding-top: 10rem;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    color:$color-black;
 }
 
-
-// .background{
-//     background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
-//     color: transparent;
-//     -webkit-background-clip : text;
-// }
