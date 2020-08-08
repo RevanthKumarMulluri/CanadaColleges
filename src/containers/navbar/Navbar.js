@@ -78,17 +78,17 @@ const Navbar = () => {
                 </button>
             </form>
             <nav className={classes.user_nav}>
-                <div className={classes.user_nav_icon_box_1}>
+                <div className={classes.user_nav_icon_box}>
                     <svg className={classes.user_nav_icon}>
                         <use xlinkHref={icon + '#icon-chat'}> </use>
                     </svg>
                     <span className={classes.user_nav_notifications}>7</span>
                 </div>
-                <div className={classes.user_nav_icon_box_2}>
+                <div className={classes.user_nav_icon_box}>
                     <div className={classes.user_nav_user}>
                         <img src={logo} alt="userPhoto" className={classes.user_nav_userphoto} />
                     </div>
-                    <span className={classes.user_nav_username}>John</span>
+                    <span className={classes.user_nav_username}>Revanth Kumar Mulluri</span>
                 </div>
             </nav>
         </header>
