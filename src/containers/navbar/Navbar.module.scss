@@ -1,45 +1,141 @@
 @import '../../scss/colors';
 
-.container {
-    position: relative;
-}
 
-.navColor{
-    color: white;
-    font-size: 1.5rem;
-    padding: 10rem;
-    //background-color: #1FDED2;
-    top:30px;
-    margin: 0px 25px;
-    border-radius: 15px;
-    height: 3.5rem;
-    font-weight: bold;
-}
 
-.bgimage {
-    background-image: linear-gradient(to right, rgba( $color-primary-light,0.3),rgba($color-primary-dark,0.3)),url(../../images/uni.jpg);
-    background-size: cover;
-    background-position: center;
-    height:50vh;
-    width: 100%;
-    position: absolute;
+
+.nav_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: $line;
 }
 
 .logo{
+    margin-left: 2rem;
     height : 4.5rem;
 }
 
-nav a {
-    color:black;
+.nav_serach{
+    flex: 0 0 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.nav_search_input{
+    font-family: inherit;
+    font-size: inherit;
+    background-color: $color-grey-light-3;
+    border:none;
+    padding: .7rem 2rem;
+    border-radius: 100px;
+    width:90%;
+    transition:all .2s ;
+    &:focus {
+        width:100%;
+        background-color: $color-grey-light-2;
+        outline: none;
+    }
+}
+
+.search_button{
+    margin-left: -3rem;
+    border: none;
+    background-color: $color-grey-light-3;
+    &:focus {
+        outline: none;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.user_nav_icon {
+   border: none;
+    width : 2rem;
+    height :2rem;
+    fill:  $color-grey-dark-2;
+    
+}
+
+.user_nav{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+
+.user_nav_userphoto{
+    width: 50px;
+    height: 50px;
+}
+
+.user_nav_icon_box_1{
+    display: flex;
+    align-items: center;
+    margin:1rem 2rem;
+    position: absolute;
+    padding: 1.2rem;
+    right: 8rem;
+    border-radius: 5%;
+    &:hover {
+        background-color: $color-grey-light-3;
+        cursor: pointer;
+    }
+  
+}
+
+.user_nav_notifications{
+    background-color: $color-primary;
+    font-size: .8rem;
+    height: 1.75rem;
+    width: 1.75rem;
+    padding: 0.2rem;
+    border-radius: 100%;
+    position: absolute;
+    top: 0.5rem;
+    left: 3rem;
+}
+
+.user_nav_icon_box_2{
+    display: flex;
+    align-items: center;
+    margin:1rem 2rem;
+    position: absolute;
+    padding: .3rem;
+    right: -2rem;
+    border-radius: 5%;
+    &:hover {
+        background-color: $color-grey-light-3;
+        cursor: pointer;
+    }
+   
+}
+
+.user_nav_username{
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-left: .5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 nav a:hover{
     color :$color-primary-light;
 }
 
 nav img {
-        width: 50px;
-        height: 50px;
+       
 }
 .nav-link {
     cursor: pointer

@@ -17,17 +17,16 @@ function App() {
   return (
     <BrowserRouter>
       <div className={classes.App}>
-        <Nav />
-        <CreateForum/>
-        {/* <div className={classes.Background}>
-        <Switch>
+        <div className={classes.container}>
+         <Nav />
+         {/* <Switch>
           <UnAuthRoute path="/login" component = {Login}/>
           <UnAuthRoute path="/register" component = {Register}/>
           <PrivateRoute path="/startforum" component = {AddForum}/>
           <Route path="/forums/:uniname" component={GetForum} />
-          <Route path="/" component = {CreateForum }/>
-        </Switch>
-        </div> */}
+          <Route path="/" component = {CreateForum }/> 
+        </Switch> */}
+        </div>
       </div>
     </BrowserRouter>
   );
