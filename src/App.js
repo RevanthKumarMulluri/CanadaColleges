@@ -12,6 +12,7 @@ import Button from './components/UI/button/Button';
 import AddForum from './containers/forum/AddForum';
 import { Link } from 'react-router-dom';
 import GetForum from './containers/forum/getForum';
+import SideNav from './containers/navbar/SideNavbar';
 
 function App() {
   return (
@@ -19,6 +20,10 @@ function App() {
       <div className={classes.App}>
         <div className={classes.container}>
          <Nav />
+         <div className={classes.content}>
+           <SideNav/>
+           <div className={classes.college_view}>view</div>
+         </div>
          {/* <Switch>
           <UnAuthRoute path="/login" component = {Login}/>
           <UnAuthRoute path="/register" component = {Register}/>

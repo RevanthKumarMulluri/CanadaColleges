@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {userActions} from '../../actions/creators/user.actions';
 import logo from '../../images/Cc.png';
 import icon from '../../images/symbol-defs.svg';
-import user from '../../images/user.jpg';
+import pic from '../../images/user.jpg';
 
 
 
@@ -86,7 +86,7 @@ const Navbar = () => {
                 </div>
                 <div className={classes.user_nav_icon_box}>
                     <div className={classes.user_nav_user}>
-                        <img src={logo} alt="userPhoto" className={classes.user_nav_userphoto} />
+                        <img src={pic} alt="userPhoto" className={classes.user_nav_userphoto} />
                     </div>
                     <span className={classes.user_nav_username}>Revanth Kumar Mulluri</span>
                 </div>

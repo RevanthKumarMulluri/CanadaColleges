@@ -1,0 +1,66 @@
+@import '../../scss/colors';
+
+
+.sidebar {
+    background-color: $color-grey-dark-1;
+   
+    
+}
+
+.side_nav {
+    font-size: 1.5rem;
+    list-style: none;
+    margin-top: 3rem;
+    height: 80rem;
+    display: flex;
+    flex-direction: column;
+    
+    &_item {
+        box-sizing: content-box;
+        margin: 2rem 0;
+       position: relative;
+       padding: 1rem;
+      
+    }
+
+    &_item::before {
+        content: "";
+       position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 3px;
+        background-color: $color-primary;
+        transform: scaleY(0);
+        transition: transform .3s;
+
+    }
+
+    &_item:hover::before {
+        transform: scaleY(1);
+        width: 100%;
+    }
+
+    &_icon{
+        width: 1.75rem;
+        height: 1.75rem;
+        margin-right: 2rem;
+        fill: white;
+    }
+
+    &_link,&_link:visited {
+        color: $color-grey-light-1;
+        display: flex;
+        justify-content: stretch;
+        text-decoration: none;
+        text-transform: uppercase;
+       margin-left: 1rem;
+       z-index: 10;
+    }
+
+    &_text{
+        color: white;
+    }
+
+}
+

@@ -13,7 +13,17 @@
  .container {
   min-height: 65rem;
   background-color:$color-grey-light-1;
-  max-width: 120rem;
+  max-width: 90rem;
   box-shadow: $shadow-dark;
   margin: 8rem auto;
+}
+
+.content { 
+  display: flex;
+}
+
+.college_view {
+  background-color: orange;
+  flex: 1;
+  
 }
