@@ -13,7 +13,7 @@ const SideNavbar = () => {
                         <svg className={classes.side_nav_icon}>
                             <use xlinkHref={icon + '#icon-home'}> </use>
                         </svg>
-                       <span className={classes.side_nav_text}>Home</span>
+                        <span className={classes.side_nav_text}>Home</span>
                     </Link>
                </li>
                <li className={classes.side_nav_item}>
