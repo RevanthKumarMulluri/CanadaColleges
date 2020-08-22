@@ -19,11 +19,15 @@ function App() {
     <BrowserRouter>
       <div className={classes.App}>
         <div className={classes.container}>
-         <Nav />
-         <div className={classes.content}>
-           <SideNav/>
-           <div className={classes.college_view}>view</div>
-         </div>
+          <Nav />
+          <div className={classes.content}>
+          <SideNav/>
+            <div className={classes.college_view}>
+              <Switch>
+                <UnAuthRoute path="/login" component = {Login}/>
+              </Switch>
+            </div>
+          </div>
          {/* <Switch>
           <UnAuthRoute path="/login" component = {Login}/>
           <UnAuthRoute path="/register" component = {Register}/>
