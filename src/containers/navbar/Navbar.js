@@ -56,7 +56,10 @@ const Navbar = () => {
     }
     return (
         <header className={classes.nav_header}>
-            <img src={logo} className={classes.logo} alt='' />
+            <div className={classes.logo}>
+                <img src={logo} className={classes.logo_img} alt='' />
+                <span className={classes.logo_text}>Canada Colleges</span>
+            </div>
             <form className={classes.nav_serach}>
                 <input type='text' className={classes.nav_search_input} placeholder="Search Colleges" />
                 <button className={classes.search_button}>

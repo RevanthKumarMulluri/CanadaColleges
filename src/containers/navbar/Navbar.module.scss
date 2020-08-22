@@ -11,8 +11,15 @@
 }
 
 .logo{
-    margin-left: 2rem;
-    height : 4.5rem;
+    &_img {
+        margin: 0 1rem;
+        height : 4.5rem;
+    }
+    &_text {
+        font-size: 1.5rem;
+        text-align: center;
+        font-weight: 700;
+    }
 }
 
 .nav_serach{
