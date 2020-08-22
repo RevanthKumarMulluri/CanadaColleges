@@ -28,6 +28,10 @@ code {
     monospace;
 }
 
+a,a:visited,a:hover,a:active {
+  text-decoration: none;
+}
+
 
 /* 
 a[href], input[type='submit'], input[type='image'], label[for], select, button, .pointer {
