@@ -19,15 +19,16 @@ const SideNavbar = () => {
                <li className={classes.side_nav_item}>
                <Link className={classes.side_nav_link} to='/'>
                         <svg className={classes.side_nav_icon}>
-                            <use xlinkHref={icon + '#icon-key'}> </use>
+                            <use xlinkHref={icon + '#icon-college'}> </use>
                         </svg>
+                        {/* <img src={college} className={classes.side_nav_icon}></img> */}
                        <span className={classes.side_nav_text}>Colleges</span>
                     </Link>
                 </li>
                 <li className={classes.side_nav_item}>
                     <Link className={classes.side_nav_link} to='/'>
                         <svg className={classes.side_nav_icon}>
-                            <use xlinkHref={icon + '#icon-map'}> </use>
+                            <use xlinkHref={icon + '#icon-forum'}> </use>
                         </svg>
                        <span className={classes.side_nav_text}>Forum</span>
                     </Link>
