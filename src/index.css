@@ -39,6 +39,10 @@ input {
   font-weight: 500;
 }
 
+input:focus {
+  outline: none;
+}
+
 input::-webkit-input-placeholder {
   text-align: center;
 }
