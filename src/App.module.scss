@@ -19,10 +19,10 @@
 }
 
 .content { 
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
 }
 
 .college_view {
-  flex: 1;
-  
+  display: grid;
 }
