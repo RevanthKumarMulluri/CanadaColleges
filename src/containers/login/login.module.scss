@@ -37,7 +37,7 @@
       justify-self: center;
       position: relative;
       &_label_username::before {
-        position: absolute;
+        position: relative;
         content: 'Email or UserName';
         display: none;
         transform: scaleY(0);
@@ -45,7 +45,7 @@
       }
 
       &_label_password::before {
-        position: absolute;
+        position: relative;
         content: 'Password';
         display: none;
         transform: scaleY(0);
