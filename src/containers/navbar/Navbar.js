@@ -43,7 +43,10 @@ const Navbar = () => {
                                     <div className={classes.user_nav_user}>
                                         <img src={pic} alt="userPhoto" className={classes.user_nav_userphoto} />
                                     </div>
-                                    <span className={classes.user_nav_username}>Revanth Kumar Mulluri</span>
+                                    <span className={classes.user_nav_username}>{user.displayName}</span>
+                                    <svg className={classes.user_nav_icon}>
+                                        <use xlinkHref={icon + '#icon-circle-down'}> </use>
+                                    </svg>
                                 </div>
                             </React.Fragment>
         }
@@ -58,7 +61,7 @@ const Navbar = () => {
         <header className={classes.nav_header}>
             <div className={classes.logo}>
                 <img src={logo} className={classes.logo_img} alt='' />
-                <span className={classes.logo_text}>Canada Colleges</span>
+                <span className={classes.logo_text}>CanadaColleges</span>
             </div>
             <form className={classes.nav_serach}>
                 <input type='text' className={classes.nav_search_input} placeholder="Search Colleges" />
